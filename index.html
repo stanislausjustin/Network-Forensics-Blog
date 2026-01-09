@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin's Network Forensics Blog - Weekly Sessions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Justin's Network Forensics Blog</h1>
+            <p class="subtitle">Weekly Learning Sessions</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 1</span>
+                    <h2>Foundations of the Digital Hunt</h2>
+                    <p>Network forensics is more than just looking at logs; it's about tracking hackers through cyberspace. This week, we explored the OSCAR methodology—Obtain info, Strategize, Collect, Analyze, and Report—to ensure our investigations are legally defensible and factual.</p>
+                    <div class="card-footer">
+                        <a href="posts/introduction.html" class="btn">Read More</a>
+                        <span class="file-type">PDF</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 2</span>
+                    <h2>Where the Evidence Hides</h2>
+                    <p>Evidence is the foundation of any investigation. We compared heavy-duty Packet Captures (PCAPs) with lightweight Flow Records like NetFlow. Real-world cases like the Equifax and Tokopedia breaches show how vital firewall and database logs are in confirming data exfiltration.</p>
+                    <div class="card-footer">
+                        <a href="posts/source-of-evidence.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 3</span>
+                    <h2>Decoding the Protocol Trail</h2>
+                    <p>Every network communication leaves a fingerprint. We looked at how transport layers (TCP/UDP) and application layers (DNS, HTTP) provide clues. For example, abnormal TCP flags can indicate an attacker trying to cover their tracks.</p>
+                    <div class="card-footer">
+                        <a href="posts/network-protocol.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 4</span>
+                    <h2>The Art of Evidence Acquisition</h2>
+                    <p>The gold rule: capture volatile evidence first. Using tools like tcpdump and Wireshark, we practice collecting accurate, reliable, and court-admissible artifacts while maintaining a strict chain of custody.</p>
+                    <div class="card-footer">
+                        <a href="posts/acquiring-evidence.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 5</span>
+                    <h2>Deep Dive into Traffic Patterns</h2>
+                    <p>Traffic analysis focuses on communication patterns—who, when, and how much—rather than just the content.</p>
+                    <div class="card-footer">
+                        <a href="posts/traffic-analysis.html" class="btn">Read More</a>
+                        <span class="file-type">PDF</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 6</span>
+                    <h2>The Traffic Analyst's Toolkit</h2>
+                    <p>This week was all about looking past the "what" and into the "how" of network communication. Traffic analysis allows us to identify scanning or exfiltration even when encryption hides the payload.</p>
+                    <div class="card-footer">
+                        <a href="posts/traffic-analysis-lab.html" class="btn">Read More</a>
+                        <span class="file-type">PDF</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 7</span>
+                    <h2>Clearing the Air: Wireless Forensics</h2>
+                    <p>Wireless forensics brings unique challenges like signal range and encryption. We learned to use "Monitor Mode" to capture 802.11 management frames, which helps in identifying rogue Access Points and deauthentication attacks.</p>
+                    <div class="card-footer">
+                        <a href="posts/wireless-forensics.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 8</span>
+                    <h2>Following the Intruder's Footprints</h2>
+                    <p>In forensics, we track actions, not names. By using IDS logs, we can identify unusual port usage or protocol misuse like DNS tunneling. Remember: blocking an attack with IPS is good for security, but it often makes the forensic evidence weaker.</p>
+                    <div class="card-footer">
+                        <a href="posts/tracking-intruder.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 9</span>
+                    <h2>Log Correlation</h2>
+                    <p>In log correlation we need to make sure that timestamps is correct and the integrity of the logs is not changed. The most important activity is the centralization and normalization of all logs into a standardized format with corrected timestamps.</p>
+                    <div class="card-footer">
+                        <a href="posts/log-correlation.html" class="btn">Read More</a>
+                        <span class="file-type">—</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 10</span>
+                    <h2>Infrastructure Devices</h2>
+                    <p>Infrastructure devices like switches and routers are gold mines for evidence. We focused on CAM and ARP tables to map physical locations to IP addresses. Always remember to check if the router itself has been compromised!</p>
+                    <div class="card-footer">
+                        <a href="posts/infrastructure.html" class="btn">Read More</a>
+                        <span class="file-type">PPTX</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 11</span>
+                    <h2>Guest Lecture: The Next Industrial Revolution</h2>
+                    <p>This week we attended a special guest lecture on "Harnessing Agentic and Physical AIs" by Professor Ki-Yong Oh from Hanyang University. Exploring how AI is transforming industries and what it means for the future of network security and forensics.</p>
+                    <div class="card-footer">
+                        <a href="posts/guest-lecture-ai.html" class="btn">Read More</a>
+                        <span class="file-type">—</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="card-content">
+                    <span class="session-number">Week 12-13</span>
+                    <h2>Final Project Presentation</h2>
+                    <p>This week every group presented their final project. My final project focused on forensic analysis of unauthorized configuration file access, investigating F5 BIG-IP exploitation via network traffic capture.</p>
+                    <div class="card-footer">
+                        <a href="posts/final-project.html" class="btn">Read More</a>
+                        <span class="file-type">PDF</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
