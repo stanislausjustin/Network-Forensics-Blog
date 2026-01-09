@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Traffic Analyst's Toolkit - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>The Traffic Analyst's Toolkit</h1>
+            <p class="post-meta">Week 6 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>This week was all about looking past the "what" and into the "how" of network communication. Traffic analysis allows us to identify scanning or exfiltration even when encryption hides the payload.</p>
+
+            <h2>The Week 6 Lab</h2>
+            <p>I performed traffic analysis on 3 PCAP files today to distinguish normal vs. abnormal traffic patterns.</p>
+
+            <div class="key-points">
+                <h3>Lab Overview</h3>
+                <p><strong>Activity:</strong> Performed hands-on analysis of three network captures to distinguish normal vs. abnormal traffic.</p>
+            </div>
+
+            <h2>Sample 1 Analysis</h2>
+            <p>Focused on a 2-minute capture featuring 608 packets. The analysis revealed:</p>
+            <ul>
+                <li><strong>Duration:</strong> Approximately 119.85 seconds (2 minutes)</li>
+                <li><strong>Packet Count:</strong> 608 packets</li>
+                <li><strong>File Size:</strong> 1.6 MB</li>
+                <li><strong>Average Packet Size:</strong> 2,716 bytes</li>
+                <li><strong>Data Rate:</strong> 13 kbps</li>
+            </ul>
+            
+            <h3>Protocol Analysis</h3>
+            <p>Dominant protocols included:</p>
+            <ul>
+                <li><strong>SMB (Server Message Block):</strong> Windows file sharing protocol</li>
+                <li><strong>NBSS (NetBIOS Session Service):</strong> Windows service discovery</li>
+                <li><strong>TLS:</strong> Secure session establishment</li>
+            </ul>
+            
+            <p><strong>Conclusion:</strong> Standard Windows-based LAN file sharing and secure session establishment. No anomalies or scanning patterns were detected. The traffic represents legitimate internal communication between two hosts in a virtualized Windows LAN environment.</p>
+
+            <h2>Sample 2 Analysis</h2>
+            <p>Investigated a low-traffic 7-minute capture with the following characteristics:</p>
+            <ul>
+                <li><strong>Duration:</strong> Approximately 436.99 seconds (7 minutes)</li>
+                <li><strong>Packet Count:</strong> 82 packets</li>
+                <li><strong>File Size:</strong> 11 kB</li>
+                <li><strong>Average Packet Size:</strong> 119.91 bytes</li>
+                <li><strong>Data Rate:</strong> 180 bits per second</li>
+            </ul>
+            
+            <h3>Traffic Composition</h3>
+            <p>The capture consisted entirely of:</p>
+            <ul>
+                <li><strong>ARP (Address Resolution Protocol):</strong> Host discovery and IP-to-MAC address resolution</li>
+                <li><strong>ICMP (Internet Control Message Protocol):</strong> Echo requests and replies (ping operations)</li>
+            </ul>
+            
+            <p><strong>Conclusion:</strong> A very quiet capture, likely just basic heartbeats or connectivity checks. The small packet sizes and Ethernet encapsulation suggest local diagnostic or connectivity testing within a virtualized environment. This represents normal network setup and troubleshooting activity.</p>
+
+            <h2>Sample 3 Analysis</h2>
+            <p>Observed a flow beginning with TCP and SMB communications, typical of resource discovery:</p>
+            <ul>
+                <li><strong>Duration:</strong> Approximately 51.06 seconds</li>
+                <li><strong>Packet Count:</strong> 740 packets</li>
+                <li><strong>File Size:</strong> 1.6 MB</li>
+                <li><strong>Average Packet Size:</strong> 2,233 bytes</li>
+                <li><strong>Data Rate:</strong> 258 kbps</li>
+            </ul>
+            
+            <h3>Traffic Flow</h3>
+            <p>The capture showed a clear progression:</p>
+            <ol>
+                <li><strong>Initial Phase:</strong> TCP exchanges and SMB (Server Message Block) communications over NBSS, typical of Windows-based file sharing and service discovery</li>
+                <li><strong>Mid-Session:</strong> TLS handshake packets appeared between hosts, showing the establishment of a secure connection</li>
+                <li><strong>Throughout:</strong> ICMP packets suggesting connectivity testing or keep-alive messages</li>
+            </ol>
+            
+            <p><strong>Conclusion:</strong> Caught a clear transition from standard SMB discovery to a secure TLS session. The presence of TLS handshakes midway through the capture likely represented authentication or encrypted data transfer between hosts. Overall, the capture reflects normal Windows LAN behavior with legitimate internal network activity.</p>
+
+            <h2>Key Insights</h2>
+            <ul>
+                <li><strong>Sample 1:</strong> Saw a lot of SMB and TLS traffic—classic Windows LAN behavior.</li>
+                <li><strong>Sample 2:</strong> A very quiet capture, likely just basic heartbeats or connectivity checks.</li>
+                <li><strong>Sample 3:</strong> Caught a clear transition from standard SMB discovery to a secure TLS session.</li>
+            </ul>
+
+            <h2>Tools Used</h2>
+            <p>For this analysis, I utilized:</p>
+            <ul>
+                <li><strong>capinfos:</strong> For extracting PCAP file metadata</li>
+                <li><strong>Wireshark:</strong> For protocol analysis and traffic visualization</li>
+                <li><strong>tshark:</strong> For command-line packet analysis and filtering</li>
+            </ul>
+
+            <h2>Course Material</h2>
+            <iframe src="../Network Forensics Forum Week 6-20260109082539.pdf" class="pdf-viewer" type="application/pdf">
+                <p>Your browser does not support PDFs. <a href="../Network Forensics Forum Week 6-20260109082539.pdf" class="download-btn">Download PDF</a></p>
+            </iframe>
+            
+            <a href="../Network Forensics Forum Week 6-20260109082539.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

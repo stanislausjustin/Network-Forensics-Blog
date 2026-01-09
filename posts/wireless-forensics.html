@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearing the Air: Wireless Forensics - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Clearing the Air: Wireless Forensics</h1>
+            <p class="post-meta">Week 7 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>Wireless forensics brings unique challenges like signal range and encryption. We learned to use "Monitor Mode" to capture 802.11 management frames, which helps in identifying rogue Access Points and deauthentication attacks.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts</h3>
+                <p><strong>Frames:</strong> Analyzes Management (Beacon), Control (ACK), and Data frames.</p>
+                <p><strong>Tools:</strong> Uses monitor mode and tools like Wireshark and Kismet to capture 802.11 traffic.</p>
+            </div>
+
+            <h2>Unique Challenges of Wireless Forensics</h2>
+            <p>Wireless network forensics presents challenges not found in wired networks:</p>
+            <ul>
+                <li><strong>Signal Range:</strong> Wireless signals extend beyond physical boundaries</li>
+                <li><strong>Encryption:</strong> WPA2/WPA3 encryption makes data capture more complex</li>
+                <li><strong>Mobility:</strong> Devices can move and connect to different access points</li>
+                <li><strong>Interference:</strong> Radio frequency interference can affect captures</li>
+                <li><strong>Passive Monitoring:</strong> Requires special capture modes</li>
+            </ul>
+
+            <h2>802.11 Frame Types</h2>
+            
+            <h3>Management Frames</h3>
+            <p>Management frames control network access and include:</p>
+            <ul>
+                <li><strong>Beacon Frames:</strong> Broadcast by access points to announce network presence</li>
+                <li><strong>Probe Requests/Responses:</strong> Used by clients to discover networks</li>
+                <li><strong>Association/Reassociation:</strong> Client connection to access points</li>
+                <li><strong>Deauthentication:</strong> Can be used in attacks to disconnect clients</li>
+            </ul>
+            <p>These frames are unencrypted and provide valuable forensic information even when data is encrypted.</p>
+
+            <h3>Control Frames</h3>
+            <p>Control frames manage frame delivery:</p>
+            <ul>
+                <li><strong>ACK (Acknowledgment):</strong> Confirms frame receipt</li>
+                <li><strong>RTS/CTS:</strong> Request to Send/Clear to Send for collision avoidance</li>
+            </ul>
+
+            <h3>Data Frames</h3>
+            <p>Data frames carry the actual network traffic. When encrypted, they require the encryption key for analysis.</p>
+
+            <h2>Monitor Mode</h2>
+            <p>Monitor mode (also called RFMON mode) is essential for wireless forensics because it allows:</p>
+            <ul>
+                <li>Passive capture of all 802.11 traffic on a channel</li>
+                <li>Capture without being associated with an access point</li>
+                <li>Capture of management and control frames</li>
+                <li>Detection of hidden networks</li>
+            </ul>
+            <p>Unlike promiscuous mode on wired networks, monitor mode is required for wireless because the adapter must operate at the radio frequency level.</p>
+
+            <h2>Forensic Applications</h2>
+            
+            <h3>Rogue Access Point Detection</h3>
+            <p>By analyzing beacon frames, investigators can identify:</p>
+            <ul>
+                <li>Unauthorized access points</li>
+                <li>Evil twin attacks (fake access points)</li>
+                <li>Access points with suspicious configurations</li>
+            </ul>
+
+            <h3>Deauthentication Attack Detection</h3>
+            <p>Deauthentication attacks can be detected by analyzing:</p>
+            <ul>
+                <li>Unusual patterns of deauthentication frames</li>
+                <li>Frames sent to broadcast addresses</li>
+                <li>Rapid disconnection/reconnection patterns</li>
+            </ul>
+
+            <h2>Tools for Wireless Forensics</h2>
+            
+            <h3>Wireshark</h3>
+            <p>Wireshark can capture and analyze 802.11 frames when used with a wireless adapter in monitor mode. It provides detailed frame analysis and filtering capabilities.</p>
+
+            <h3>Kismet</h3>
+            <p>Kismet is a wireless network detector, sniffer, and intrusion detection system. It's particularly useful for:</p>
+            <ul>
+                <li>Passive network discovery</li>
+                <li>Detecting hidden networks</li>
+                <li>Identifying network clients</li>
+                <li>Logging all detected networks</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Use monitor mode for passive captures</li>
+                <li>Capture on multiple channels if possible</li>
+                <li>Document signal strength and location</li>
+                <li>Preserve encryption keys if available</li>
+                <li>Correlate wireless captures with wired network evidence</li>
+            </ul>
+
+            <h2>Course Material</h2>
+            <p><strong>Note:</strong> This is a PowerPoint presentation. Please download to view.</p>
+            
+            <a href="../Wireless Network Forensics.pptx" class="download-btn" download>Download PowerPoint</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

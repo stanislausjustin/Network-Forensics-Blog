@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Devices - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Infrastructure Devices</h1>
+            <p class="post-meta">Week 10 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>Infrastructure devices like switches and routers are gold mines for evidence. We focused on CAM and ARP tables to map physical locations to IP addresses. Always remember to check if the router itself has been compromised!</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts</h3>
+                <p><strong>Switches/Routers:</strong> Sources of volatile evidence like CAM tables (MAC-to-port mappings) and ARP tables (MAC-to-IP mappings).</p>
+            </div>
+
+            <h2>Infrastructure Devices as Evidence Sources</h2>
+            <p>Network infrastructure devices—switches, routers, and firewalls—contain valuable forensic evidence that is often overlooked. These devices maintain tables and logs that can provide crucial information about network activity.</p>
+
+            <h2>Switch Evidence</h2>
+            
+            <h3>CAM (Content Addressable Memory) Tables</h3>
+            <p>Switches maintain CAM tables that map MAC addresses to physical switch ports. This information is critical because it allows investigators to:</p>
+            <ul>
+                <li>Identify which physical port a device was connected to</li>
+                <li>Track device movement within the network</li>
+                <li>Correlate MAC addresses with network activity</li>
+                <li>Identify unauthorized devices on the network</li>
+            </ul>
+            <p><strong>Important:</strong> CAM tables are volatile and can be cleared or age out, so they must be captured quickly.</p>
+
+            <h2>Router Evidence</h2>
+            
+            <h3>ARP (Address Resolution Protocol) Tables</h3>
+            <p>Routers maintain ARP tables that map MAC addresses to IP addresses. This provides:</p>
+            <ul>
+                <li>IP-to-MAC address mappings</li>
+                <li>Information about devices that have communicated recently</li>
+                <li>Evidence of IP address spoofing attempts</li>
+            </ul>
+
+            <h3>Routing Tables</h3>
+            <p>Routing tables show how traffic is routed through the network, which can reveal:</p>
+            <ul>
+                <li>Network topology at the time of investigation</li>
+                <li>Routing changes that might indicate compromise</li>
+                <li>Path of data exfiltration</li>
+            </ul>
+
+            <h2>Critical Security Consideration</h2>
+            <p><strong>Always check if the router itself has been compromised!</strong> If an attacker has gained administrative access to a router, they can:</p>
+            <ul>
+                <li>Modify routing tables</li>
+                <li>Redirect traffic</li>
+                <li>Modify or delete logs</li>
+                <li>Install backdoors</li>
+            </ul>
+            <p>Before trusting router evidence, verify the integrity of the router's configuration and logs.</p>
+
+            <h2>Firewall Logs</h2>
+            <p>Firewalls generate extensive logs that can show:</p>
+            <ul>
+                <li>Blocked connection attempts</li>
+                <li>Allowed connections</li>
+                <li>Port scans and attack patterns</li>
+                <li>Data exfiltration attempts</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Capture volatile tables (CAM, ARP) immediately</li>
+                <li>Document the physical location of devices</li>
+                <li>Verify device integrity before trusting evidence</li>
+                <li>Maintain regular backups of device configurations</li>
+                <li>Correlate infrastructure evidence with other sources</li>
+            </ul>
+
+            <h2>Course Material</h2>
+            <p><strong>Note:</strong> This is a PowerPoint presentation. Please download to view.</p>
+            
+            <a href="../Understanding Switch Router and Firewall.pptx" class="download-btn" download>Download PowerPoint</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

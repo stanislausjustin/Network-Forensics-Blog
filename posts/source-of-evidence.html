@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where the Evidence Hides - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Where the Evidence Hides</h1>
+            <p class="post-meta">Week 2 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>Evidence is the foundation of any investigation. We compared heavy-duty Packet Captures (PCAPs) with lightweight Flow Records like NetFlow. Real-world cases like the Equifax and Tokopedia breaches show how vital firewall and database logs are in confirming data exfiltration.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts</h3>
+                <p><strong>Types of Evidence:</strong> Packet Captures (PCAPs), Flow Records (NetFlow), Device Logs, and IDS/IPS alerts.</p>
+                <p><strong>PCAPs vs. Flows:</strong> PCAPs provide full payload detail but are heavy; Flow records are lightweight metadata showing "who talked to whom".</p>
+            </div>
+
+            <h2>Types of Network Evidence</h2>
+            
+            <h3>Packet Captures (PCAPs)</h3>
+            <p>PCAPs contain the complete network traffic including all packet headers and payloads. They provide the most detailed information but require significant storage space and processing power. PCAPs are essential when you need to see exactly what data was transmitted.</p>
+
+            <h3>Flow Records (NetFlow)</h3>
+            <p>Flow records are metadata summaries that show communication patterns—who communicated with whom, when, and how much data was transferred. They're lightweight and perfect for identifying suspicious patterns without the overhead of full packet captures.</p>
+
+            <h3>Device Logs</h3>
+            <p>Firewalls, routers, switches, and other network devices generate logs that can provide crucial evidence. These logs often contain information about connection attempts, blocked traffic, and configuration changes.</p>
+
+            <h3>IDS/IPS Alerts</h3>
+            <p>Intrusion Detection and Prevention Systems generate alerts when they detect suspicious activity. These alerts can serve as triggers for deeper forensic investigation.</p>
+
+            <h2>Real-World Applications</h2>
+            <p>In major breaches like Equifax and Tokopedia, investigators relied heavily on firewall and database logs to confirm data exfiltration patterns. These logs provided the timeline and scope of the attacks, demonstrating the critical importance of comprehensive logging.</p>
+
+            <h2>Course Material</h2>
+            <p>Course materials are available for this session.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

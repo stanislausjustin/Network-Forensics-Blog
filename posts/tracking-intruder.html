@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Following the Intruder's Footprints - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Following the Intruder's Footprints</h1>
+            <p class="post-meta">Week 8 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>In forensics, we track actions, not names. By using IDS logs, we can identify unusual port usage or protocol misuse like DNS tunneling. Remember: blocking an attack with IPS is good for security, but it often makes the forensic evidence weaker.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts</h3>
+                <p><strong>Focus:</strong> Tracking is about understanding attacker behavior (entry points, movement, footprints) rather than their physical identity.</p>
+                <p><strong>IDS vs. IPS:</strong> IDS provides higher forensic value because it passively logs data, whereas IPS focus is on blocking.</p>
+            </div>
+
+            <h2>Understanding Intruder Tracking</h2>
+            <p>Network forensics focuses on tracking attacker actions and behavior patterns rather than identifying the physical person. We track:</p>
+            <ul>
+                <li><strong>Entry Points:</strong> How the attacker gained initial access</li>
+                <li><strong>Movement:</strong> Lateral movement through the network</li>
+                <li><strong>Footprints:</strong> Evidence of attacker activities and modifications</li>
+            </ul>
+
+            <h2>Using IDS Logs</h2>
+            <p>Intrusion Detection Systems (IDS) are invaluable for tracking intruders because they:</p>
+            <ul>
+                <li>Passively monitor network traffic</li>
+                <li>Generate detailed logs of suspicious activity</li>
+                <li>Don't interfere with traffic (preserving evidence)</li>
+                <li>Can detect patterns that might be missed in manual analysis</li>
+            </ul>
+
+            <h2>Identifying Suspicious Patterns</h2>
+            
+            <h3>Unusual Port Usage</h3>
+            <p>Attackers often use non-standard ports to evade detection. IDS logs can reveal:</p>
+            <ul>
+                <li>Services running on unexpected ports</li>
+                <li>Port scanning activities</li>
+                <li>Backdoors on unusual ports</li>
+            </ul>
+
+            <h3>Protocol Misuse</h3>
+            <p>Attackers frequently misuse legitimate protocols for malicious purposes:</p>
+            <ul>
+                <li><strong>DNS Tunneling:</strong> Using DNS queries to exfiltrate data or establish C2 channels</li>
+                <li><strong>HTTP Tunneling:</strong> Encapsulating other protocols within HTTP</li>
+                <li><strong>ICMP Tunneling:</strong> Using ICMP packets for data transfer</li>
+            </ul>
+
+            <h2>IDS vs. IPS: Forensic Implications</h2>
+            
+            <h3>IDS (Intrusion Detection System)</h3>
+            <p>IDS systems are passive—they monitor and log but don't block traffic. This makes them ideal for forensics because:</p>
+            <ul>
+                <li>They preserve complete evidence</li>
+                <li>They don't alert attackers that they've been detected</li>
+                <li>They provide comprehensive logs for analysis</li>
+            </ul>
+
+            <h3>IPS (Intrusion Prevention System)</h3>
+            <p>IPS systems actively block attacks, which is good for security but can weaken forensic evidence because:</p>
+            <ul>
+                <li>Blocked traffic may not be fully logged</li>
+                <li>Attackers may change tactics when blocked</li>
+                <li>Some evidence may be lost when connections are terminated</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <p>For maximum forensic value:</p>
+            <ul>
+                <li>Use IDS for monitoring and logging</li>
+                <li>Maintain comprehensive logs of all alerts</li>
+                <li>Correlate IDS alerts with other evidence sources</li>
+                <li>Document all findings in a timeline</li>
+            </ul>
+
+            <h2>Course Material</h2>
+            <p><strong>Note:</strong> This is a PowerPoint presentation. Please download to view.</p>
+            
+            <a href="../Main Material Tracking Intruder.pptx" class="download-btn" download>Download PowerPoint</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

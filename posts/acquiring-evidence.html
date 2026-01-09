@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Evidence Acquisition - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>The Art of Evidence Acquisition</h1>
+            <p class="post-meta">Week 4 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>The gold rule: capture volatile evidence first. Using tools like tcpdump and Wireshark, we practice collecting accurate, reliable, and court-admissible artifacts while maintaining a strict chain of custody.</p>
+            
+            <div class="key-points">
+                <h3>Key Principles</h3>
+                <p><strong>Order of Volatility:</strong> Capture the most volatile evidence first (RAM, network connections) before less volatile data (disk logs).</p>
+                <p><strong>Chain of Custody:</strong> Maintain detailed documentation of who handled evidence, when, and how.</p>
+                <p><strong>Integrity:</strong> Always use hashing (MD5, SHA-256) to ensure evidence hasn't been tampered with.</p>
+            </div>
+
+            <h2>Order of Volatility</h2>
+            <p>Network evidence follows a strict order of volatility. The most volatile data must be captured first because it disappears quickly:</p>
+            <ol>
+                <li><strong>Registers and Cache:</strong> Most volatile, lost immediately</li>
+                <li><strong>RAM:</strong> Lost when system powers down</li>
+                <li><strong>Network Connections:</strong> Active sessions that end when connections close</li>
+                <li><strong>Routing Tables:</strong> Can change frequently</li>
+                <li><strong>ARP Cache:</strong> MAC-to-IP mappings</li>
+                <li><strong>Process Table:</strong> Running processes</li>
+                <li><strong>Kernel Statistics:</strong> System counters</li>
+                <li><strong>Log Files:</strong> More persistent but can be overwritten</li>
+                <li><strong>Disk:</strong> Most persistent, but still can be modified</li>
+            </ol>
+
+            <h2>Tools for Evidence Acquisition</h2>
+            
+            <h3>tcpdump</h3>
+            <p>Command-line packet analyzer that allows capturing network traffic. Essential for capturing packets in real-time and saving them to PCAP files for later analysis.</p>
+
+            <h3>Wireshark</h3>
+            <p>Graphical network protocol analyzer that provides deep inspection of hundreds of protocols. Excellent for both live capture and offline analysis of captured packets.</p>
+
+            <h2>Chain of Custody</h2>
+            <p>Maintaining a proper chain of custody is critical for legal admissibility. Every piece of evidence must be:</p>
+            <ul>
+                <li>Documented with timestamps</li>
+                <li>Hashed to verify integrity</li>
+                <li>Stored securely</li>
+                <li>Tracked through every transfer</li>
+            </ul>
+
+            <h2>Hashing for Integrity</h2>
+            <p>Always create cryptographic hashes (MD5, SHA-256) of evidence immediately after capture. This provides a digital fingerprint that can verify the evidence hasn't been altered. Store hashes separately from the evidence itself.</p>
+
+            <h2>Course Material</h2>
+            <p><strong>Note:</strong> This is a PowerPoint presentation. Please download to view.</p>
+            
+            <a href="../Acquiring Evidence in Network Forensics.pptx" class="download-btn" download>Download PowerPoint</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

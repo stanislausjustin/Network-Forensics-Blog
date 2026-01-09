@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive into Traffic Patterns - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Deep Dive into Traffic Patterns</h1>
+            <p class="post-meta">Week 5 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>Traffic analysis focuses on communication patterns—who, when, and how much—rather than just the content.</p>
+
+            <h2>What is Traffic Analysis?</h2>
+            <p>Traffic analysis examines the patterns and characteristics of network communications rather than the actual content. It answers questions like:</p>
+            <ul>
+                <li>Who is communicating with whom?</li>
+                <li>When are communications happening?</li>
+                <li>How much data is being transferred?</li>
+                <li>What are the communication patterns?</li>
+            </ul>
+
+            <h2>Key Patterns to Identify</h2>
+            
+            <h3>Scanning Patterns</h3>
+            <p>Network scanning often shows distinctive patterns:</p>
+            <ul>
+                <li>Sequential port scans (checking ports in order)</li>
+                <li>SYN packets without corresponding ACK responses</li>
+                <li>Multiple connection attempts to different hosts</li>
+                <li>Unusual traffic volumes from single sources</li>
+            </ul>
+
+            <h3>Exfiltration Patterns</h3>
+            <p>Data exfiltration can be identified through:</p>
+            <ul>
+                <li>Unusually large outbound data transfers</li>
+                <li>Persistent connections to external IPs</li>
+                <li>Traffic during off-hours</li>
+                <li>Protocols not typically used for legitimate purposes</li>
+            </ul>
+
+            <h2>Analysis Techniques</h2>
+            <p>Effective traffic analysis involves:</p>
+            <ul>
+                <li><strong>Flow Analysis:</strong> Examining NetFlow or similar flow records to identify communication patterns</li>
+                <li><strong>Statistical Analysis:</strong> Looking for anomalies in traffic volume, timing, or destinations</li>
+                <li><strong>Protocol Analysis:</strong> Identifying unusual protocol usage or protocol tunneling</li>
+                <li><strong>Time-based Analysis:</strong> Correlating events with timestamps to build a timeline</li>
+            </ul>
+
+            <h2>Practical Application</h2>
+            <p>In practice, traffic analysis on PCAP files can reveal:</p>
+            <ul>
+                <li>Initial compromise vectors</li>
+                <li>Lateral movement within networks</li>
+                <li>Data exfiltration attempts</li>
+                <li>Command and control communications</li>
+            </ul>
+
+            <h2>Course Material</h2>
+            <iframe src="../Traffic Analysis.pdf" class="pdf-viewer" type="application/pdf">
+                <p>Your browser does not support PDFs. <a href="../Traffic Analysis.pdf" class="download-btn">Download PDF</a></p>
+            </iframe>
+            
+            <a href="../Traffic Analysis.pdf" class="download-btn" download>Download PDF</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

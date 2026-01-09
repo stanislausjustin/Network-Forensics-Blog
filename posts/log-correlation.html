@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Correlation - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Log Correlation</h1>
+            <p class="post-meta">Week 9 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>In log correlation we need to make sure that timestamps is correct and the integrity of the logs is not changed. For skill, you need to understand the context, topology (in network), and has deep understanding for services are running/investigating. The expected output from log correlation basically is a picture of when the incident occurred so that it can reveal what happened precisely.</p>
+
+            <div class="key-points">
+                <h3>Key Principles</h3>
+                <p><strong>Timestamp Accuracy:</strong> Ensuring all log timestamps are correct and synchronized across systems.</p>
+                <p><strong>Log Integrity:</strong> Verifying that logs have not been altered or tampered with.</p>
+                <p><strong>Context Understanding:</strong> Knowing the network topology and services being investigated.</p>
+            </div>
+
+            <h2>What is Log Correlation?</h2>
+            <p>Log correlation is the process of analyzing and correlating log data from multiple sources to identify patterns, anomalies, and security incidents. It involves collecting logs from various systems, normalizing them into a standardized format, and analyzing them to create a comprehensive picture of network activity and security events.</p>
+
+            <h2>What is Most Important in Log Correlation Activity?</h2>
+            <p><strong>The most important activity is the centralization and normalization of all logs into a standardized format with corrected timestamps.</strong></p>
+            
+            <p>This process involves:</p>
+            <ul>
+                <li><strong>Centralization:</strong> Collecting logs from all sources (firewalls, servers, switches, routers, IDS/IPS, applications) into a single location</li>
+                <li><strong>Normalization:</strong> Converting logs from different formats into a standardized structure that can be easily analyzed</li>
+                <li><strong>Timestamp Correction:</strong> Ensuring all timestamps are synchronized and accurate, accounting for time zones and clock drift</li>
+            </ul>
+
+            <p>Without proper centralization and normalization, it becomes nearly impossible to correlate events across different systems and create an accurate timeline of incidents.</p>
+
+            <h2>What Skills Do You Need to Perform Log Correlation?</h2>
+            <p><strong>The required skill is security incident investigation and rule development to analyze the normalized data and create custom detection rules.</strong></p>
+
+            <p>Key skills include:</p>
+            <ul>
+                <li><strong>Security Incident Investigation:</strong> Understanding attack patterns, indicators of compromise, and how to trace security events</li>
+                <li><strong>Rule Development:</strong> Creating custom detection rules and queries to identify suspicious patterns</li>
+                <li><strong>Network Topology Understanding:</strong> Knowing how devices are connected and how traffic flows through the network</li>
+                <li><strong>Service Knowledge:</strong> Deep understanding of the services running on the network and their normal behavior</li>
+                <li><strong>Context Analysis:</strong> Ability to understand the context of events and how they relate to each other</li>
+            </ul>
+
+            <h2>What Are Expected Outputs from Log Correlation?</h2>
+            <p><strong>Expected outputs are actionable security intelligence and clear visualization of threats, identifying compromised endpoints, network misconfigurations, and covert communication channels.</strong></p>
+
+            <p>Specifically, log correlation should produce:</p>
+            <ul>
+                <li><strong>Incident Timeline:</strong> A clear picture of when the incident occurred, showing the sequence of events</li>
+                <li><strong>Threat Identification:</strong> Detection of security threats, attacks, and anomalies</li>
+                <li><strong>Compromised Endpoints:</strong> Identification of systems that have been breached or compromised</li>
+                <li><strong>Network Misconfigurations:</strong> Discovery of configuration errors that could lead to security vulnerabilities</li>
+                <li><strong>Covert Communication Channels:</strong> Detection of hidden or unauthorized communication channels</li>
+                <li><strong>Actionable Intelligence:</strong> Information that can be used to respond to and mitigate security incidents</li>
+            </ul>
+
+            <h2>The Correlation Process</h2>
+            <p>The log correlation process typically follows these steps:</p>
+            <ol>
+                <li><strong>Collection:</strong> Gather logs from all relevant sources</li>
+                <li><strong>Normalization:</strong> Convert logs to a standardized format</li>
+                <li><strong>Timestamp Correction:</strong> Synchronize all timestamps</li>
+                <li><strong>Enrichment:</strong> Add context and additional information</li>
+                <li><strong>Correlation:</strong> Identify relationships and patterns across logs</li>
+                <li><strong>Analysis:</strong> Investigate correlated events</li>
+                <li><strong>Visualization:</strong> Create visual representations of findings</li>
+                <li><strong>Reporting:</strong> Document findings and recommendations</li>
+            </ol>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Maintain log integrity through hashing and secure storage</li>
+                <li>Use synchronized time sources (NTP) across all systems</li>
+                <li>Store logs in a centralized SIEM (Security Information and Event Management) system</li>
+                <li>Develop and maintain custom correlation rules</li>
+                <li>Regularly review and update correlation logic</li>
+                <li>Document network topology and service dependencies</li>
+                <li>Create visual dashboards for quick threat identification</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>

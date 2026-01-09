@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoding the Protocol Trail - Justin's Network Forensics Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="post-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Blog</a>
+            <h1>Decoding the Protocol Trail</h1>
+            <p class="post-meta">Week 3 Session</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="post-content">
+            <p>Every network communication leaves a fingerprint. We looked at how transport layers (TCP/UDP) and application layers (DNS, HTTP) provide clues. For example, abnormal TCP flags can indicate an attacker trying to cover their tracks.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts</h3>
+                <p><strong>Protocol Value:</strong> Different protocols leave unique fingerprints (e.g., TCP flags for session reconstruction, DNS for finding C2 domains).</p>
+            </div>
+
+            <h2>Understanding Protocol Fingerprints</h2>
+            <p>Network protocols operate at different layers of the OSI model, and each layer provides different types of forensic evidence. Understanding these layers and their protocols is crucial for effective network forensics.</p>
+
+            <h2>Transport Layer Protocols</h2>
+            
+            <h3>TCP (Transmission Control Protocol)</h3>
+            <p>TCP provides connection-oriented communication with flags that indicate connection state. Abnormal TCP flags can reveal:</p>
+            <ul>
+                <li>Port scanning attempts (SYN flags without ACK)</li>
+                <li>Connection hijacking attempts</li>
+                <li>Attempts to evade detection</li>
+            </ul>
+            <p>TCP flags are essential for session reconstruction, allowing investigators to piece together fragmented communications.</p>
+
+            <h3>UDP (User Datagram Protocol)</h3>
+            <p>UDP is connectionless and provides less information than TCP, but it's commonly used for DNS queries, which can reveal command and control (C2) domains used by attackers.</p>
+
+            <h2>Application Layer Protocols</h2>
+            
+            <h3>DNS (Domain Name System)</h3>
+            <p>DNS queries can reveal malicious domains used for command and control. Unusual DNS patterns, such as:</p>
+            <ul>
+                <li>Frequent queries to unknown domains</li>
+                <li>DNS tunneling attempts</li>
+                <li>Queries to domains associated with known malware</li>
+            </ul>
+            <p>These patterns are critical indicators of compromise.</p>
+
+            <h3>HTTP/HTTPS</h3>
+            <p>HTTP headers and request patterns can reveal:</p>
+            <ul>
+                <li>User agents used by attackers</li>
+                <li>Data exfiltration patterns</li>
+                <li>Malicious payload delivery</li>
+            </ul>
+
+            <h2>Forensic Value</h2>
+            <p>Each protocol provides unique forensic value. TCP flags help reconstruct sessions, DNS queries reveal C2 infrastructure, and application layer protocols show what attackers were actually doing. Understanding these protocol fingerprints is essential for effective network forensics.</p>
+
+            <h2>Course Material</h2>
+            <p>Course materials are available for this session.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Justin's Network Forensics Blog</p>
+        </div>
+    </footer>
+</body>
+</html>
